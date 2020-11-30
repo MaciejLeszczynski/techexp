@@ -9,5 +9,4 @@
       tasks:
         - name: Setup Default Environment
           import_role:
-            name: casandra
-
+            name: cassandra

@@ -5,7 +5,9 @@
     exclude: kernel*
 
 - name: installing some dependencies
-  yum: pkg={{ item }} state=installed 
+  yum: 
+    package: "{{ item }}"
+    state: installed 
   loop:
   - vim
   - jna

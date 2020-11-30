@@ -1,0 +1,12 @@
+- name: installing Datastax cassandra
+  yum:
+    package: cassandra
+    state: installed
+
+- name: configuring cassandra
+  template: 
+    source: cassandra.yaml.j2
+    dest: '/etc/cassandra/conf/cassandra.yaml'
+  notify:
+    - Start Cassandra
+    - Enable Cassandra
