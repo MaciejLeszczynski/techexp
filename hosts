@@ -1,4 +1,6 @@
 [cassandra]
+ansible_user=vagrant
+ansible_become=true
 node1 172.168.100.10
 node2 172.168.100.11
 node3 172.168.100.12

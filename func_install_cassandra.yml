@@ -6,6 +6,7 @@
         JAVA_HOME: "/home/applitopia/Applitopia"
       gather_facts: true
       become: true
+      become_user: vagrant
       tasks:
         - name: Setup Default Environment
           import_role:
