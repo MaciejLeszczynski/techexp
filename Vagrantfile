@@ -36,5 +36,6 @@ Vagrant.configure("2") do |config|
   EOC
    config.vm.provision "ansible" do |ansible|
     ansible.playbook = "func_install_cassandra.yml"
+    ansible.inventory_path = "./hosts"
   end  
 end

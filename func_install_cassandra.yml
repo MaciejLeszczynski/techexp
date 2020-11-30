@@ -6,8 +6,8 @@
       gather_facts: true
       become: true
       become_user: vagrant
+      hosts: cassandra
       tasks:
         - name: Setup Default Environment
-          hosts: cassandra
           import_role:
             name: cassandra
