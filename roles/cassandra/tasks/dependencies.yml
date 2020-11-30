@@ -1,0 +1,14 @@
+- name: Upgrade all packages, excluding kernel
+  yum:
+    name: '*'
+    state: latest
+    exclude: kernel*
+
+- name: installing some dependencies
+  yum: pkg={{ item }} state=installed 
+  loop:
+  - vim
+  - jna
+  - sysstat
+  - libselinux-python
+  - lsof

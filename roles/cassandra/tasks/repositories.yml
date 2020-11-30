@@ -1,0 +1,14 @@
+- name: adding oracle java repository
+  shell: "wget --no-cookies --no-check-certificate --header 'Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie' \
+ 'http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm'"
+
+# - name: Adding datastax cassandra repo
+#   template: src=templates/cassandra.repo dest=/etc/yum.repos.d/cassandra.repo owner=root group=root
+
+- name: Adding apache Cassandra repo
+  yum_repository:
+    name: Cassandra
+    description: Cassandra YUM repo
+    file: cassandra
+    baseurl: https://downloads.apache.org/cassandra/redhat/311x/
+    gpgcheck: no

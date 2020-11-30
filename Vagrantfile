@@ -34,4 +34,7 @@ Vagrant.configure("2") do |config|
     sudo systemctl restart sshd.service
     echo "finished"
   EOC
+   config.vm.provision "ansible" do |ansible|
+    ansible.playbook = "func_install_cassandra.yml"
+  end  
 end
