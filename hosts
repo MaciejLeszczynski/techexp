@@ -1,6 +1,11 @@
+[all]
+
 [cassandra]
+172.168.100.10
+172.168.100.11
+172.168.100.12
+
+[all:vars]
+host_key_checking = False
 ansible_user=vagrant
 ansible_become=true
-node1 172.168.100.10
-node2 172.168.100.11
-node3 172.168.100.12
