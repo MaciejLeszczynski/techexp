@@ -1,5 +1,6 @@
 - name: Upgrade all packages, excluding kernel
   become: true
+  become_user: root
   yum:
     name: '*'
     state: latest
@@ -7,6 +8,7 @@
 
 - name: installing some dependencies
   become: true
+  become_user: root
   yum:
     package: "{{ item }}"
     state: installed
