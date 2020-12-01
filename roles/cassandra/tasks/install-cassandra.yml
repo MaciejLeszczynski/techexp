@@ -1,6 +1,6 @@
 - name: installing Datastax cassandra
   yum:
-    package: cassandra
+    name: cassandra
     state: present
 
 - name: configuring cassandra
