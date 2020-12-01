@@ -10,7 +10,7 @@
   become: true
   become_user: root
   yum:
-    package: "{{ item }}"
+    name: "{{ item }}"
     state: present
   loop:
   - vim
