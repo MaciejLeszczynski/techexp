@@ -1,4 +1,4 @@
-- name: adding oracle java repository
+- name: Downloading oracle java rpm
   become: true
   become_user: root
   shell: "wget -O /tmp/jdk-8u131-linux-x64.rpm --no-cookies --no-check-certificate --header 'Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie' \
