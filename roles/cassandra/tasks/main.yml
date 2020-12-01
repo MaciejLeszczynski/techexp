@@ -1,11 +1,11 @@
 ---
 # tasks file for cassandra
 - name: Include task list for dependiences startup
-  include_tasks: dependiences.yml
+  include_tasks: tasks/dependiences.yml
   tags:
     - dependiences
 
 - name: Include task list for oracle container startup
-  include_tasks: repostitories.yml
+  include_tasks: tasks/repostitories.yml
   tags:
     - repositiories
