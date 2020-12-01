@@ -11,7 +11,7 @@
   become_user: root
   yum:
     package: "{{ item }}"
-    state: installed
+    state: present
   loop:
   - vim
   - jna
