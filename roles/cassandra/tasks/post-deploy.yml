@@ -1,0 +1,18 @@
+- firewalld:
+    service: https
+    permanent: true
+    state: enabled
+
+- firewalld:
+    service: http
+    permanent: true
+    state: enabled
+
+- firewalld:
+    port: 8081/tcp
+    permanent: true
+    state: enabled
+
+- firewalld:
+    port: 161-162/udp
+    permanent: true

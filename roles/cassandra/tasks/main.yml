@@ -5,7 +5,17 @@
   tags:
     - dependencies
 
-- name: Include task list for oracle container startup
+- name: Include task list for repo setup
   include_tasks: repositories.yml
   tags:
     - repositories
+
+- name: Include task list installing cassandra
+  include_tasks: install-cassandra.yml
+  tags:
+    - cassandra
+
+- name: Include tasks for post deployment jobs
+  include_tasks: post-deploy.yml
+  tags:
+    - post
