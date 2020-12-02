@@ -19,3 +19,4 @@
   - sysstat
   - libselinux-python
   - lsof
+  - policycoreutils-python

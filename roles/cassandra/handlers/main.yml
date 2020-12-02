@@ -11,6 +11,17 @@
     group: cassandra
     mode: '0664'
 
+- name: Hintsdir Ownership
+  become: true
+  become_user: root
+  file:
+    path: /hints
+    state: directory
+    recurse: yes
+    owner: cassandra
+    group: cassandra
+    mode: '0664'
+
 - name: Start Cassandra
   systemd:
     name: cassandra
