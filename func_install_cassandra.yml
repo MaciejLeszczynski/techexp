@@ -1,8 +1,6 @@
 #This play has to be executed from one folder below. Will be changed later to have a play with roles, not just a one role in root directory of the git repo
 ---
     - name: Install Casandra Cluster on all nodes
-      environment:
-        JAVA_HOME: "/home/applitopia/Applitopia"
       gather_facts: true
       become: true
       become_user: vagrant
