@@ -37,17 +37,3 @@
     target: '/hints'
     setype: httpd_sys_script_exec_t
     state: present
-
-- name: Enable Cassandra
-  become: true
-  become_user: root
-  service:
-    name: cassandra
-    enabled: true
-
-- name: Start Cassandra
-  become: true
-  become_user: root
-  service:
-    name: cassandra
-    state: started

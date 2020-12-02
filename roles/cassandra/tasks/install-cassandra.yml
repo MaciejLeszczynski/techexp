@@ -51,7 +51,23 @@
     - Hintsdir Ownership
     - Selinux Datadir
     - Selinux Hintsdir
-    - Start Cassandra
-    - Enable Cassandra
+  tags:
+    - cassandra
+
+- name: Enable Cassandra
+  become: true
+  become_user: root
+  service:
+    name: cassandra
+    enabled: true
+  tags:
+    - cassandra
+
+- name: Start Cassandra
+  become: true
+  become_user: root
+  service:
+    name: cassandra
+    state: started
   tags:
     - cassandra
