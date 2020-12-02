@@ -11,8 +11,11 @@
   become: true
   become_user: root
   template:
-    source: cassandra.yaml.j2
+    src: cassandra.yaml.j2
     dest: '/etc/cassandra/conf/cassandra.yaml'
+    owner: root
+    group: root
+    mode: '0660'
   notify:
     - Start Cassandra
     - Enable Cassandra
