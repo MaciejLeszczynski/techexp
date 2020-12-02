@@ -1,0 +1,6 @@
+- name: Generate a Self Signed OpenSSL certificate
+  openssl_certificate:
+    path: /etc/ssl/crt/ansible.com.crt
+    privatekey_path: /etc/ssl/private/cassandra.com.pem
+    csr_path: /etc/ssl/csr/cassandra.com.csr
+    provider: selfsigned

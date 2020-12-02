@@ -20,3 +20,7 @@
   - libselinux-python
   - lsof
   - policycoreutils-python
+
+- name: Ensure hostname set
+  hostname:
+    name: "{{ inventory_hostname }}"
