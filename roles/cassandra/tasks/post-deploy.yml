@@ -1,7 +1,10 @@
 - name: Run nodetool to verify if cluster is up
   command: 'nodetool statusgossip'
   register: status
-
+  retries: 10
+  delay: 10
+  until: status.rc == 0
+  
 - name: Display status
   debug:
     msg: "{{ status.stdout }}"
