@@ -1,6 +1,8 @@
 ---
 # handlers file for cassandra
 - name: Datadir Ownership
+  become: true
+  become_user: root
   file:
     path: "{{ config.data_file_directories }}"
     state: directory
