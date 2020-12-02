@@ -28,3 +28,4 @@
   firewalld:
     port: 161-162/udp
     permanent: true
+    state: enabled
