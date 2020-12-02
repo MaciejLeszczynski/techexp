@@ -4,4 +4,4 @@
 
 - name: Display status
   debug:
-    msg: status
+    msg: "{{ status.stdout }}"
