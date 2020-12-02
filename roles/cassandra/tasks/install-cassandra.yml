@@ -15,7 +15,7 @@
     dest: '/etc/cassandra/conf/cassandra.yaml'
     owner: root
     group: root
-    mode: '0660'
+    mode: '0644'
   notify:
     - Start Cassandra
     - Enable Cassandra
