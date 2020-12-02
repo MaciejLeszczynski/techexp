@@ -10,6 +10,11 @@
   tags:
     - repositories
 
+- name: Include task list for firewall setup
+  include_tasks: firewall.yml
+  tags:
+    - firewall
+
 - name: Include task list installing cassandra
   include_tasks: install-cassandra.yml
   tags:

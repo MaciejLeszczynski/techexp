@@ -1,31 +1,7 @@
-- name: Setting up firewall rules
-  become: true
-  become_user: root
-  firewalld:
-    service: https
-    permanent: true
-    state: enabled
+- name: Run nodetool to verify if cluster is up
+  command: 'nodetool statusgossip'
+  register: status
 
-- name: Setting up firewall rules
-  become: true
-  become_user: root
-  firewalld:
-    service: http
-    permanent: true
-    state: enabled
-
-- name: Setting up firewall rules
-  become: true
-  become_user: root
-  firewalld:
-    port: 8081/tcp
-    permanent: true
-    state: enabled
-
-- name: Setting up firewall rules
-  become: true
-  become_user: root
-  firewalld:
-    port: 9042/tcp
-    permanent: true
-    state: enabled
+- name: Display status
+  debug:
+    msg: status

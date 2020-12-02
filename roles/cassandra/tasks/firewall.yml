@@ -1,0 +1,39 @@
+- name: Setting up firewall rules
+  become: true
+  become_user: root
+  firewalld:
+    service: https
+    permanent: true
+    state: enabled
+
+- name: Setting up firewall rules
+  become: true
+  become_user: root
+  firewalld:
+    service: http
+    permanent: true
+    state: enabled
+
+- name: Setting up firewall rules
+  become: true
+  become_user: root
+  firewalld:
+    port: 8081/tcp
+    permanent: true
+    state: enabled
+
+- name: Setting up firewall rules
+  become: true
+  become_user: root
+  firewalld:
+    port: 9042/tcp
+    permanent: true
+    state: enabled
+
+- name: Setting up firewall rules
+  become: true
+  become_user: root
+  firewalld:
+    port: 7000/tcp
+    permanent: true
+    state: enabled
