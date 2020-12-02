@@ -1,39 +1,8 @@
 ---
 # handlers file for cassandra
-- name: Datadir Ownership
+- name: Cassandra Restart
   become: true
   become_user: root
-  file:
-    path: "{{ config.data_file_directories }}"
-    state: directory
-    recurse: yes
-    owner: cassandra
-    group: cassandra
-    mode: '0774'
-
-- name: Hintsdir Ownership
-  become: true
-  become_user: root
-  file:
-    path: /hints
-    state: directory
-    recurse: yes
-    owner: cassandra
-    group: cassandra
-    mode: '0774'
-
-- name: Selinux Datadir
-  become: true
-  become_user: root
-  sefcontext:
-    target: "{{ config.data_file_directories }}"
-    setype: httpd_sys_script_exec_t
-    state: present
-
-- name: Selinux Hintsdir
-  become: true
-  become_user: root
-  sefcontext:
-    target: '/hints'
-    setype: httpd_sys_script_exec_t
-    state: present
+  service:
+    name: cassandra
+    state: restarted

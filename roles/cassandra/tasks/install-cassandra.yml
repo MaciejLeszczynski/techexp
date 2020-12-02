@@ -47,12 +47,48 @@
     group: root
     mode: '0644'
   notify:
-    - Datadir Ownership
-    - Hintsdir Ownership
-    - Selinux Datadir
-    - Selinux Hintsdir
+    - Cassandra Restart
   tags:
     - cassandra
+
+- name: Datadir Ownership
+  become: true
+  become_user: root
+  file:
+    path: "{{ config.data_file_directories }}"
+    state: directory
+    recurse: yes
+    owner: cassandra
+    group: cassandra
+    mode: '0774'
+
+- name: Hintsdir Ownership
+  become: true
+  become_user: root
+  file:
+    path: /hints
+    state: directory
+    recurse: yes
+    owner: cassandra
+    group: cassandra
+    mode: '0774'
+
+- name: Selinux Datadir
+  become: true
+  become_user: root
+  sefcontext:
+    target: "{{ config.data_file_directories }}"
+    setype: httpd_sys_script_exec_t
+    state: present
+
+- name: Selinux Hintsdir
+  become: true
+  become_user: root
+  sefcontext:
+    target: '/hints'
+    setype: httpd_sys_script_exec_t
+    state: present
+
 
 - name: Enable Cassandra
   become: true
