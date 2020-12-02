@@ -23,23 +23,31 @@
     mode: '0774'
 
 - name: Selinux Datadir
+  become: true
+  become_user: root
   sefcontext:
     target: "{{ config.data_file_directories }}"
     setype: httpd_sys_script_exec_t
     state: present
 
 - name: Selinux Hintsdir
+  become: true
+  become_user: root
   sefcontext:
     target: '/hints'
     setype: httpd_sys_script_exec_t
     state: present
 
 - name: Start Cassandra
+  become: true
+  become_user: root
   systemd:
     name: cassandra
     state: restarted
 
 - name: Enable Cassandra
+  become: true
+  become_user: root
   systemd:
     name: cassandra
     state: enabled
