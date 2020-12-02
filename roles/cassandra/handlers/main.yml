@@ -1,11 +1,11 @@
 ---
 # handlers file for cassandra
-- name: Start cassandra
+- name: Start Cassandra
   systemd:
     name: cassandra
     state: restarted
 
-- name: Enable cassandra
+- name: Enable Cassandra
   systemd:
     name: cassandra
     state: enabled
