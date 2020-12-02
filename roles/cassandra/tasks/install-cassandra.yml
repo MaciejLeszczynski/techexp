@@ -4,6 +4,8 @@
   yum:
     name: cassandra
     state: present
+  tags:
+    - cassandra
 
 - name: configuring cassandra
   become: true
@@ -14,3 +16,5 @@
   notify:
     - Start Cassandra
     - Enable Cassandra
+  tags:
+    - cassandra
