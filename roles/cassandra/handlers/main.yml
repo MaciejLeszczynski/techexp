@@ -22,6 +22,18 @@
     group: cassandra
     mode: '0774'
 
+- name: Selinux Datadir
+  sefcontext:
+    target: "{{ config.data_file_directories }}"
+    setype: httpd_sys_script_exec_t
+    state: present
+
+- name: Selinux Hintsdir
+  sefcontext:
+    target: '/hints'
+    setype: httpd_sys_script_exec_t
+    state: present
+
 - name: Start Cassandra
   systemd:
     name: cassandra
