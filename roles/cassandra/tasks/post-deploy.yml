@@ -26,6 +26,6 @@
   become: true
   become_user: root
   firewalld:
-    port: 161-162/udp
+    port: 9042/tcp
     permanent: true
     state: enabled
