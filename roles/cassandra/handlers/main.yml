@@ -9,6 +9,7 @@
     recurse: yes
     owner: cassandra
     group: cassandra
+    mode: '0664'
 
 - name: Start Cassandra
   systemd:
