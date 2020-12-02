@@ -9,7 +9,7 @@
     recurse: yes
     owner: cassandra
     group: cassandra
-    mode: '0664'
+    mode: '0774'
 
 - name: Hintsdir Ownership
   become: true
@@ -20,7 +20,7 @@
     recurse: yes
     owner: cassandra
     group: cassandra
-    mode: '0664'
+    mode: '0774'
 
 - name: Start Cassandra
   systemd:
