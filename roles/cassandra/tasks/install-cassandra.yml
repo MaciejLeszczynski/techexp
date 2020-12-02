@@ -8,6 +8,8 @@
     - cassandra
 
 - name: Adjusting sysctl parameter
+  become: true
+  become_user: root
   sysctl:
     name: vm.max_map_count
     value: 1048575
@@ -16,6 +18,8 @@
     reload: yes
 
 - name: Adjusting sysctl parameter
+  become: true
+  become_user: root
   sysctl:
     name: fs.file-max
     value: 2097152
@@ -24,6 +28,8 @@
     reload: yes
 
 - name: Adjusting sysctl parameter
+  become: true
+  become_user: root
   sysctl:
     name: vm.swappiness
     value: 1
@@ -41,6 +47,7 @@
     group: root
     mode: '0644'
   notify:
+    - Datadir Ownership
     - Start Cassandra
     - Enable Cassandra
   tags:

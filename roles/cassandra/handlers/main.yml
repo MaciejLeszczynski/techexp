@@ -1,5 +1,13 @@
 ---
 # handlers file for cassandra
+- name: Datadir Ownership
+  file:
+    path: "{{ config.data_file_directories }}"
+    state: directory
+    recurse: yes
+    owner: cassandra
+    group: cassandra
+
 - name: Start Cassandra
   systemd:
     name: cassandra

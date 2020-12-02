@@ -104,7 +104,7 @@ partitioner: org.apache.cassandra.dht.Murmur3Partitioner
 # the configured compaction strategy.
 # If not set, the default directory is $CASSANDRA_HOME/data/data.
 data_file_directories:
-    - /var/lib/cassandra/data
+    - '{{ config.data_file_directories }}'
 
 # commit log.  when running on magnetic HDD, this should be a
 # separate spindle than the data directories.
