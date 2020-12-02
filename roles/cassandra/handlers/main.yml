@@ -38,16 +38,16 @@
     setype: httpd_sys_script_exec_t
     state: present
 
-- name: Start Cassandra
-  become: true
-  become_user: root
-  systemd:
-    name: cassandra
-    state: restarted
-
 - name: Enable Cassandra
   become: true
   become_user: root
-  systemd:
+  service:
     name: cassandra
-    state: enabled
+    enabled: true
+
+- name: Start Cassandra
+  become: true
+  become_user: root
+  service:
+    name: cassandra
+    state: started
