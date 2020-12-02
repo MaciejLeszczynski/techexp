@@ -4,4 +4,4 @@ config:
    seeds: '172.168.100.10, 172.168.100.11'
    listen_address: 172.168.100.11
    rpc_address: 172.168.100.11
-   data_file_directories: "/cassandra"
+   data_file_directories: /cassandra
