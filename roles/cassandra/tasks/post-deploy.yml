@@ -1,18 +1,30 @@
-- firewalld:
+- name: Setting up firewall rules
+  become: true
+  become_user: root
+  firewalld:
     service: https
     permanent: true
     state: enabled
 
-- firewalld:
+- name: Setting up firewall rules
+  become: true
+  become_user: root
+  firewalld:
     service: http
     permanent: true
     state: enabled
 
-- firewalld:
+- name: Setting up firewall rules
+  become: true
+  become_user: root
+  firewalld:
     port: 8081/tcp
     permanent: true
     state: enabled
 
-- firewalld:
+- name: Setting up firewall rules
+  become: true
+  become_user: root
+  firewalld:
     port: 161-162/udp
     permanent: true
