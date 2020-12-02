@@ -1,0 +1,6 @@
+#Main Cassandra configuration variables
+config:
+   cluster_name: 'Maciej Cluster'
+   seeds: '172.168.100.10'
+   listen_address: 172.168.100.12
+   rpc_address: 172.168.100.12
