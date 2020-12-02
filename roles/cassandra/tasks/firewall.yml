@@ -37,3 +37,11 @@
     port: 7000/tcp
     permanent: true
     state: enabled
+
+- name: Setting up firewall rules
+  become: true
+  become_user: root
+  firewalld:
+    port: 7199/tcp
+    permanent: true
+    state: enabled
